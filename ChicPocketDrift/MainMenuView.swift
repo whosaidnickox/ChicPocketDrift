@@ -12,12 +12,41 @@ struct MainMenuView: View {
     @State var appearAnims: Bool = false
     var body: some View {
         ZStack {
-            LoopingBackgroundView()
-                .ignoresSafeArea()
+Image("backgroundskiqs")
+                .resizable()                .ignoresSafeArea()
+            
+           
             
             VStack {
+                
+
+                Image("sloqilisb")
+                   
+                    .offset(y: appearAnims ? 0 : -UIScreen.main.bounds.height)
+                    .animation(Animation.linear.delay(0.15),
+                               value: appearAnims)
+                Spacer()
+                
                 HStack {
-                    Spacer()
+                    NavigationLink {
+                        RateUsView()
+                    } label: {
+                        Image("rtus")
+                    }
+                    .offset(x: appearAnims ? 0 : UIScreen.main.bounds.width)
+                    .animation(Animation.bouncy.delay(0.23),
+                               value: appearAnims)
+
+                   
+                    
+                    NavigationLink {
+                        ViberaemIgruView()
+                    } label: {
+                        Image("stiwz")
+                            .offset(y: appearAnims ? 0 : UIScreen.main.bounds.width)
+                            .animation(Animation.bouncy.delay(0.2),
+                                       value: appearAnims)
+                    }
                     
                     NavigationLink {
                         SettingsView()
@@ -27,30 +56,6 @@ struct MainMenuView: View {
                             .animation(Animation.bouncy.delay(0.25),
                                        value: appearAnims)
                     }
-
-                 
-                }
-                .padding()
-              
-                Spacer()
-            }
-            
-            VStack {
-                
-                Image("sloqilisb")
-                   
-                    .offset(y: appearAnims ? 0 : -UIScreen.main.bounds.height)
-                    .animation(Animation.linear.delay(0.15),
-                               value: appearAnims)
-                Spacer()
-                
-                NavigationLink {
-                    DriftimseaVmeste()
-                } label: {
-                    Image("stiwz")
-                        .offset(y: appearAnims ? 0 : UIScreen.main.bounds.width)
-                        .animation(Animation.bouncy.delay(0.2),
-                                   value: appearAnims)
                 }
 
              

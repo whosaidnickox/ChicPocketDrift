@@ -15,6 +15,8 @@ struct NazatiKnop: View {
             self.dismiss()
         } label: {
             Image("diuapoweras")
+                .resizable()
+                .frame(width: 44, height: 37)
             
         }
 

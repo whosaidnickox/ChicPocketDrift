@@ -13,7 +13,9 @@ struct Zagrujimsia: View {
     @State var goiuw2sm: Bool = false
     var body: some View {
         ZStack {
-            LoopingBackgroundView()
+            Image("backgroundskiqs")
+                .resizable()
+                .ignoresSafeArea()
             
             NavigationLink("", destination: MainMenuView(), isActive: $goiuw2sm)
             VStack {
